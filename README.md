@@ -83,7 +83,7 @@ CSS - The Complete Guide 2020
     ```
     CSS - EXAMPLE
 
-    - {
+    * {
         font-family: sans serif
     }
 
