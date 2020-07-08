@@ -16,7 +16,7 @@ CSS - The Complete Guide 2020
 
 ---
 
-Selectors
+**Selectors**
 
 - Elements
 
@@ -114,26 +114,50 @@ Selectors
 
 - Attribute
 
-  - Set equal style to all elemtnts with
+  - Set equal style to all elements with
 
+    ```
+    HTML - EXAMPLE
 
-        ```
-        HTML - EXAMPLE
+    <div>
+        <button disabled>not available</button>
+    </div>
+    <div>
+        <button disabled>not available</button>
+    </div>
+    ```
 
-        <div>
-            <button disabled>not available</disabled>
-        </div>
-        <div>
-            <button disabled>not available</disabled>
-        </div>
-        ```
+    ```
+    CSS - EXAMPLE
 
-        ```
-        CSS - EXAMPLE
-
-        [disabled] {
-            opacity: 0.5;
-        }
-        ```
+    [disabled] {
+        opacity: 0.5;
+    }
+    ```
 
 ---
+
+**Priority**
+
+- multiple rules can be applied to the same Element. although, there is a certain priority:
+  - Inline Style >
+  - #ID Selector >
+  - .class, :pseudo-class and [attribute] selectors >
+  - Tag and ::pseudo-element selectors
+
+---
+
+**Inheritance**
+If you don't explicit set a certain property for an element, it tries to inherit from it parent and takes it as value [keyword = inherit]
+
+---
+
+**Combinators**
+
+Imagine you want to style each h1 tag in a specific section. you should not use a class for a single element. You can take an ID but then you create a lot of IDs which doesn't make sense. Instead use:
+
+> #product-overview h1 { font-family: sans-serif}
+
+this will style each nested element in den Section with the ID of "product-overview"
+(even if it is not the direct child of the section).
+More Specific = higher specifity

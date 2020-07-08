@@ -1,8 +1,17 @@
-section {
+body {
+  font-family: "Roboto Mono", monospace;
+}
+
+#product-overview {
   background: black;
 }
 
-h1 {
+.section-title {
   color: lightgreen;
-  font-family: sans-serif;
+  font-family: inherit;
+}
+
+#product-overview h1 {
+  color: white;
+  font-family: "Bangers", cursive;
 }
