@@ -161,3 +161,90 @@ Imagine you want to style each h1 tag in a specific section. you should not use 
 this will style each nested element in den Section with the ID of "product-overview"
 (even if it is not the direct child of the section).
 More Specific = higher specifity
+
+Types of Combinator
+
+- Adjacent Sibling (every direct sibling will get the style) - here only every direct "p" sibling from a "h2"
+
+```
+h2 + p {
+    color: red;
+}
+```
+
+```
+<div>
+    <h2> Not applied </h2>
+    <p> CSS applied </p>
+    <h2> Not applied </h2>
+    <h3> Not applied </h3>
+    <p> Not applied </p>
+    <h2> Not applied </h2>
+    <p> CSS applied </p>
+<div>
+```
+
+- General Sibling (every sibling will get the style) - here every "p" sibling from a "h2"
+  - important:
+    - Elements share the same Parent
+    - second element comes after first element
+
+```
+h2 ~ p {
+    color: red;
+}
+```
+
+```
+<div>
+    <h2> Not applied </h2>
+    <p> CSS applied </p>
+    <h2> Not applied </h2>
+    <h3> Not applied </h3>
+    <p> CSS applied </p>
+    <h2> Not applied </h2>
+    <p> CSS applied </p>
+<div>
+```
+
+- Child (every direct child will get the style) - here every direct "p" child from the "div" will get the style
+  - second element is a direct child of first element
+
+```
+div > p {
+    color: red;
+}
+```
+
+```
+<div>
+    <div> Not applied </div>
+    <p> CSS applied </p>
+    <div> Not applied </div>
+    <article>
+        <p>Not applied</p>
+    </article>
+    <p> CSS applied </p>
+<div>
+```
+
+- descendant (every child will get the style) - here every "p" child from the "div" will get the style
+  - second element is a direct child of first element
+
+```
+div > p {
+    color: red;
+}
+```
+
+```
+<div>
+    <div> Not applied </div>
+    <p> CSS applied </p>
+    <div> Not applied </div>
+    <article>
+        <p>CSS applied</p>
+    </article>
+    <p> CSS applied </p>
+<div>
+```
