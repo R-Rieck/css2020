@@ -8,10 +8,10 @@ body {
 }
 
 #product-overview {
-  background: black;
+  background: url("../ressources/freedom.jpg");
   padding: 10px;
   width: 100%;
-  height: 100%;
+  height: 600px;
 }
 
 #product-overview h1 {
