@@ -321,6 +321,36 @@ prop {
 
 ---
 
+**Display**
+
+- There are two diffrent element types:
+  - Inline-Elements: Takes just the space it needs (IMPORTANT: you can't set padding and Margin)
+  - Block-level-Elements: Starts on a new line and takes all the available space it gets (IMPORTANT: you can set padding and Margin)
+
+-props-
+
+_inline_
+
+- the elements will display as an inline-element
+
+_block_
+
+- the element will display as an Block-level-element
+
+_inline-block_
+
+- behaves like block, but you can set padding and margin to it
+
+_none_
+
+- removes the element from visual document flow but not removed in the dom
+
+_hidden_
+
+- hides the element from the visual document, but it still has its own place
+
+---
+
 List of usefull css props:
 
 **Box-sizing**
