@@ -1,0 +1,31 @@
+body {
+  font-family: "Sahitya", serif;
+}
+
+code {
+  font-family: monospace;
+  color: red;
+}
+
+li {
+  font-family: inherit;
+}
+
+#assignment-instructions {
+  color: #5bcaff;
+  font-family: sans-serif;
+}
+
+.third-issue {
+  color: green;
+}
+
+li + li {
+  background: black;
+  color: white;
+}
+
+ol li {
+  background: black;
+  color: white;
+}

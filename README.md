@@ -248,3 +248,90 @@ div > p {
     <p> CSS applied </p>
 <div>
 ```
+
+---
+
+**Box-Model**
+
+The Box-Model contains 4 different properties
+
+- Margin
+- Border
+- Padding
+- Content
+
+> **Margin:**
+> ~Margin-Collpasing~
+>
+> - if you have to elements with a margin, they will overlap. But if one element has a higher margin than the other one, the elements margin will overlap the element with lower margin.
+>   In General you should use either Margin-top or margin-bottom
+
+---
+
+**shorthand properties**
+
+```
+prop {
+    border-width: 2px;
+    border-style: solid;
+    border-color: green;
+}
+
+EQUAL TO:
+
+prop {
+    border: 1px solid green;
+}
+```
+
+```
+Another example for shorthand properties is this:
+
+prop {
+    margin-top: 2px
+    margin-right: 5px;
+    margin-bottom: 2px;
+    margin-left: 5px;
+}
+
+EQUAL TO:
+
+prop {
+    margin: 2px 5px 2px 5px;
+
+    `margin: top right bottom left`
+}
+
+EQUAL TO:
+
+prop {
+    margin: 2px 5px;
+
+    `margin: top/bottom right/left`
+}
+
+EQUAL TO:
+
+prop {
+    margin: 10px;
+
+    `margin: top/right/bottom/left`
+}
+```
+
+---
+
+List of usefull css props:
+
+**Box-sizing**
+
+- by setting up this property, it allows you to add the padding and the border to the total width and height:
+
+Example
+
+```
+* {
+    box-sizing: border-box;
+    //the border width and the padding are included in the width and height
+}
+```

@@ -1,9 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Roboto Mono", monospace;
+  margin: 0;
 }
 
 #product-overview {
   background: black;
+  margin: 20px;
+  padding: 10px;
+  border: 5px solid green;
+  width: 400px;
+  height: 100%;
 }
 
 .section-title {
