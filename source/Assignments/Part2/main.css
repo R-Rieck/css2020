@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+.box-wrapper-one {
+  display: inline-block;
+  background-color: limegreen;
+  visibility: hidden;
+  padding: 10px 20px;
+  margin: 10px 20px;
+  border: 3px solid gray;
+  height: 300px;
+  width: 50%;
+  text-align: center;
+}
+
+.box-wrapper-two {
+  display: inline-block;
+  background-color: #5bcaff;
+  padding: 10px 20px;
+  margin: 20px 20px;
+  border: 3px solid gray;
+  text-align: center;
+}
+
+div:last-child:hover {
+  background: magenta;
+}

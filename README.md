@@ -351,6 +351,13 @@ _hidden_
 
 ---
 
+**pseudo**
+
+- pseudo-classes: defined by : => defines the style by a special state
+- pseudo-element: defined by :: => defines the style by a specific part
+
+---
+
 List of usefull css props:
 
 **Box-sizing**
