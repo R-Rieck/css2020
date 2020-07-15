@@ -10,7 +10,7 @@
   margin: 10px 20px;
   border: 3px solid gray;
   height: 300px;
-  width: 50%;
+  width: 48%;
   text-align: center;
 }
 
@@ -21,6 +21,7 @@
   margin: 20px 20px;
   border: 3px solid gray;
   text-align: center;
+  width: 48%;
 }
 
 div:last-child:hover {
