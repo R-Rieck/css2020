@@ -116,24 +116,51 @@ CSS - The Complete Guide 2020
 
   - Set equal style to all elements with
 
-    ```
-    HTML - EXAMPLE
+        ```
+        HTML - EXAMPLE
 
-    <div>
-        <button disabled>not available</button>
-    </div>
-    <div>
-        <button disabled>not available</button>
-    </div>
-    ```
+        <div>
+            <button disabled>not available</button>
+        </div>
+        <div>
+            <button disabled>not available</button>
+        </div>
+        ```
 
-    ```
-    CSS - EXAMPLE
+        ```
+        CSS - EXAMPLE
 
-    [disabled] {
-        opacity: 0.5;
-    }
-    ```
+        [disabled] {
+            opacity: 0.5;
+        }
+        ```
+
+    **More on Selectors**
+
+you can use multiple Selectors on one element. Assign multiple class with a space between them.
+
+for instance:
+
+```
+HTML
+----
+<div class="class-one class-two"><div>
+<a href="#" class="active"></a>
+
+CSS
+----
+.class-one {}
+.class-two {}
+
+a.active {}
+```
+
+if you specify more than one class with the same property, the order in the css file decides which property is getting applied (the last one).
+
+**class vs id**
+
+class: **reusable** and allow you to mark things for styling purposes
+class: **once per page** and non css-meaning (e.g.: link purposes)
 
 ---
 
@@ -358,7 +385,14 @@ _hidden_
 
 ---
 
-List of usefull css props:
+---
+
+List of usefull css props and pseudoelements:
+
+**!important**
+
+it overwrites specifity and all other selectors
+**DO NOT** use it that often... it leads to bad code
 
 **Box-sizing**
 
@@ -372,3 +406,24 @@ Example
     //the border width and the padding are included in the width and height
 }
 ```
+
+**:not()**
+defines a style for every element of that type, that are not excluded by the not
+
+```
+<a class="active">I don not get the style</a>
+<a>I got the style</a>
+
+
+a:not(.active) {
+    color: limegreen
+}
+```
+
+### important to know
+
+- Not all browser support a specific property. To find out if the browser supports the feature, go check out the MDN Site and scroll to the end of a page.
+  https://developer.mozilla.org/de/
+
+- another site which is pretty good to checkout for browser support is
+  https://caniuse.com/
