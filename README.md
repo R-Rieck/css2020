@@ -432,6 +432,21 @@ Example
 }
 ```
 
+**outline**
+
+- its like the border but not part of the box-model
+
+Example
+
+```
+button:focus {
+    outline: none;
+
+    /*default style by the browser*/
+    outline: outline: 5px auto -webkit-focus-ring-color;
+}
+```
+
 **:not()**
 defines a style for every element of that type, that are not excluded by the not
 
