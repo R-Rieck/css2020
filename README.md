@@ -385,6 +385,26 @@ _hidden_
 
 ---
 
+**positioning**
+
+**float**
+
+- override the default positioning of the element and push it to the left or the right side if the page: IMPORTANT: with float you take the element out of the document flow.
+
+there is a way to fix such beahviour
+
+```
+HTML
+
+<div style="display: block"></div>
+<div style="display: block"; float: right></div>
+<div style="display: block; clear: both"></div>
+<div style="display: block"></div>
+
+```
+
+the css property "clear" says: every previous float element will not be respected.
+
 ---
 
 List of usefull css props and pseudoelements:
