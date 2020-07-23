@@ -385,9 +385,54 @@ _hidden_
 
 ---
 
-**positioning**
+**Position**
 
-**float**
+- Position: "static" is the default position
+  static follows the normal document flow
+
+There are 4 other values for the property "position"
+
+- position: absolute
+- position: relative
+- position: fixed
+- position: sticky (pretty new, so not supported by all browsers)
+
+_fixed:_
+fixed refers to the viewport
+you can also add left, top, right, bottom to specify it's position
+
+---
+
+List of usefull css props and pseudoelements:
+
+**Z-INDEX**
+
+- the z-index positions elements on the z-axe. It only applies when there is a position set on the element, that is not static.
+  important to know is that the default value of z-index is "auto", which is equal to "0". therefore if you have an element with position that is not static and z-index set to -1, the element will place behind the other ones because their z-index is auto or 0.
+  the example for this below:
+
+```
+HTML
+
+<div class="background"></div>
+<div class="foregrou´nd"></div>
+
+CSS
+
+.background {
+    position: fixed;
+    z-index: 0
+    width: 100%;
+    height: 100%;
+}
+
+.foreground {
+    width: 100%;
+    height: 100%
+}
+```
+
+**FLOAT**
 
 - override the default positioning of the element and push it to the left or the right side if the page: IMPORTANT: with float you take the element out of the document flow.
 
@@ -405,16 +450,12 @@ HTML
 
 the css property "clear" says: every previous float element will not be respected.
 
----
-
-List of usefull css props and pseudoelements:
-
-**!important**
+**!IMPORTANT**
 
 it overwrites specifity and all other selectors
 **DO NOT** use it that often... it leads to bad code
 
-**Box-sizing**
+**BOX-SIZING**
 
 - by setting up this property, it allows you to add the padding and the border to the total width and height:
 
