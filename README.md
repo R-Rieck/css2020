@@ -400,6 +400,47 @@ There are 4 other values for the property "position"
 _fixed:_
 fixed refers to the viewport
 you can also add left, top, right, bottom to specify it's position
+the element is no longer part of the document flow
+
+_absolute:_
+absolute refers to the ancestor that have a position property set, different from static
+you can also add left, top, right, bottom to specify it's position
+the element is no longer part of the document flow
+
+_relative:_
+relative refers to itself
+you can also add left, top, right, bottom to specify it's position
+if you set top and left 50px, it moves from its current position 50px to the left and 50px to the top
+the element is still part of the document flow
+
+_sticky:_
+sticky refers on top by the viewport but at the bottom to its parent
+you can also add left, top, right, bottom to specify it's position
+it normally behaves like relative and takes part to the document flow. But if it reachs the state where it should disappear, it starts to behave like fixed
+
+**stacking-context**
+
+```
+HTML
+
+<body>
+    <div id="headline"></div>
+    <div id="main">
+        <div id="main-1"></div>
+        <div id="main-2"></div>
+        <div id="main-3"></div>
+    </div>
+    <div id="footer"></div>
+</body>
+```
+
+when all elements have a position of fixed there a two important cases:
+
+1.) main-2 has a z-index of -50. The Problem is, it only refers to its parent and wouldn't display behind main.
+
+2.) main-2 has a higher index than footer. main-2 wouldn't display in front of footer because it's again refering to its Parent
+
+The stacking context is about positioning elements on the z-axe. All elements refer only to it's parent.
 
 ---
 
@@ -415,7 +456,7 @@ List of usefull css props and pseudoelements:
 HTML
 
 <div class="background"></div>
-<div class="foregrou´nd"></div>
+<div class="foreground"></div>
 
 CSS
 
