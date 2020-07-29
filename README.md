@@ -461,6 +461,34 @@ If there is no position set on an element, the default positioning context is th
 
 - Sets the initial position for each background image
 
+**linear-gradients**
+
+- they are treated like images
+
+```
+CSS - Example
+
+div {
+    /*background-image: linear-gradient(direction, first color, second color)*/
+    background-image: linear-gradient(to left top, red, blue)
+    background-image: linear-gradient(30%, red 70%, blue)
+}
+```
+
+**linear-gradients**
+
+- they are treated like images
+
+```
+CSS - Example
+
+div {
+    /*background-image: radial-gradient(type, first color, second color)*/
+    background-image: radial-gradient(circle, red, blue)
+    background-image: radial-gradient(circle at top left, red 70%, blue)
+}
+```
+
 ---
 
 List of usefull css props and pseudoelements:

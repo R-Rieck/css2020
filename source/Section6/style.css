@@ -1,6 +1,8 @@
 #product-overview {
   /* background-image: url("../ressources/freedom.jpg"); */
-  background-image: url("https://media1.giphy.com/media/l1BgQOc1Jj7L86BA4/source.gif");
+  /* background-image: url("https://media1.giphy.com/media/l1BgQOc1Jj7L86BA4/source.gif"); */
+  /* background-image: linear-gradient(to left top, red, blue); */
+  background-image: radial-gradient(red, blue);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left 10% bottom 20%;
