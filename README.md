@@ -447,6 +447,15 @@ If there is no position set on an element, the default positioning context is th
 
 ### Background-Images and Images
 
+**shorthand**
+
+```
+* {
+    /*background: bg-color bg-image bg-repeat bg-attachment bg-position*/
+    background: url("../ressources/freedom.jpg") left 10% bottom 20% / cover
+}
+```
+
 **background-size**
 
 - Sets the width and height of the background to the specified values
@@ -486,6 +495,30 @@ div {
     /*background-image: radial-gradient(type, first color, second color)*/
     background-image: radial-gradient(circle, red, blue)
     background-image: radial-gradient(circle at top left, red 70%, blue)
+}
+```
+
+**multiple backgrounds**
+
+```
+background:
+    linear-gradient(to top, rgba(80, 68, 18, 0.6), transparent),
+    url("../ressources/freedom.jpg") left 10% bottom 20% / cover no-repeat border-box,
+    #ff1b68;
+```
+
+- you can define multiple backgrounds to add filter like effects or just a default
+  the example above is the best: - the linear gradient adds a goldish filter to the next element - the next element is a background image, now with a goldish look - the hex-code at the end ist just a fallback
+
+every background is seperated with a " , "
+
+**filter**
+
+- filter are predefined functions to modify an element
+
+```
+* {
+    filter: blur(5%)
 }
 ```
 

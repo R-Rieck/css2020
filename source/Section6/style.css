@@ -2,7 +2,11 @@
   /* background-image: url("../ressources/freedom.jpg"); */
   /* background-image: url("https://media1.giphy.com/media/l1BgQOc1Jj7L86BA4/source.gif"); */
   /* background-image: linear-gradient(to left top, red, blue); */
-  background-image: radial-gradient(red, blue);
+  /* background-image: radial-gradient(red, blue); */
+  background: linear-gradient(to top, rgba(80, 68, 18, 0.6), transparent),
+    url("../ressources/freedom.jpg") left 10% bottom 20% / cover no-repeat
+      border-box,
+    #ff1b68;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left 10% bottom 20%;
@@ -114,5 +118,6 @@
   border-radius: 50%;
   width: 128px;
   height: 128px;
+  padding: 24px;
   background: #d29eaf;
 }

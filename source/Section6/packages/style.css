@@ -1,10 +1,11 @@
 main {
-  padding-top: 32px;
+  padding: 64px 0px;
 }
 
 .background {
   position: fixed;
-  background: url("../../ressources/plans-background.jpg");
+  background: url("../../ressources/plans-background.jpg") center/cover;
+  filter: grayscale(50%);
   left: 0;
   top: 0;
   width: 100%;
