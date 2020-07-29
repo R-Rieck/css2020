@@ -441,6 +441,25 @@ when all elements have a position of fixed there a two important cases:
 2.) main-2 has a higher index than footer. main-2 wouldn't display in front of footer because it's again refering to its Parent
 
 The stacking context is about positioning elements on the z-axe. All elements refer only to it's parent.
+If there is no position set on an element, the default positioning context is the html element
+
+---
+
+### Background-Images and Images
+
+**background-size**
+
+- Sets the width and height of the background to the specified values
+  - Contain: makes the image to be completly visible in the container, no matter if there is a whitespace
+  - cover: detects and fills the entire container
+
+**background-repeat**
+
+- controlls if the image should be repeated either on the x, y or on both axes
+
+**background-position**
+
+- Sets the initial position for each background image
 
 ---
 
