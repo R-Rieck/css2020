@@ -6,7 +6,7 @@ CSS - The Complete Guide 2020
 
 ## Introduction
 
-**History**
+### History
 
 - CSS1 - 1996
 - CSS2 - 1998
@@ -16,7 +16,7 @@ CSS - The Complete Guide 2020
 
 ---
 
-**Selectors**
+### Selectors
 
 - Elements
 
@@ -164,7 +164,7 @@ class: **once per page** and non css-meaning (e.g.: link purposes)
 
 ---
 
-**Priority**
+### Priority
 
 - multiple rules can be applied to the same Element. although, there is a certain priority:
   - Inline Style >
@@ -174,12 +174,13 @@ class: **once per page** and non css-meaning (e.g.: link purposes)
 
 ---
 
-**Inheritance**
+### Inheritance
+
 If you don't explicit set a certain property for an element, it tries to inherit from it parent and takes it as value [keyword = inherit]
 
 ---
 
-**Combinators**
+### Combinators
 
 Imagine you want to style each h1 tag in a specific section. you should not use a class for a single element. You can take an ID but then you create a lot of IDs which doesn't make sense. Instead use:
 
@@ -278,7 +279,7 @@ div > p {
 
 ---
 
-**Box-Model**
+### Box-Model
 
 The Box-Model contains 4 different properties
 
@@ -295,7 +296,7 @@ The Box-Model contains 4 different properties
 
 ---
 
-**shorthand properties**
+### shorthand properties
 
 ```
 prop {
@@ -348,7 +349,7 @@ prop {
 
 ---
 
-**Display**
+### Display
 
 - There are two diffrent element types:
   - Inline-Elements: Takes just the space it needs (IMPORTANT: you can't set padding and Margin)
@@ -385,7 +386,7 @@ _hidden_
 
 ---
 
-**Position**
+### Position
 
 - Position: "static" is the default position
   static follows the normal document flow
@@ -521,6 +522,24 @@ every background is seperated with a " , "
     filter: blur(5%)
 }
 ```
+
+---
+
+### Sizes and Units
+
+**Units**
+
+- pixels (px)
+- percentages (%)
+- root em (rem)
+- em (em)
+- viewport height(vh)
+- viewport width (vw)
+
+| absolute lengths            | viewport lengths           | font relative lengths       | special case |
+| --------------------------- | -------------------------- | --------------------------- | ------------ |
+| Mostly ignore User settings | Adjust to current viewport | Adjust to default font size | %            |
+| px                          | vh / vw / vmin / vmax      | rem / em                    |
 
 ---
 

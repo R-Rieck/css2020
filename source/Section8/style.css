@@ -1,0 +1,123 @@
+#product-overview {
+  /* background-image: url("../ressources/freedom.jpg"); */
+  /* background-image: url("https://media1.giphy.com/media/l1BgQOc1Jj7L86BA4/source.gif"); */
+  /* background-image: linear-gradient(to left top, red, blue); */
+  /* background-image: radial-gradient(red, blue); */
+  background: linear-gradient(to top, rgba(80, 68, 18, 0.6), transparent),
+    url("../ressources/freedom.jpg") left 10% bottom 20% / cover no-repeat
+      border-box,
+    #ff1b68;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left 10% bottom 20%;
+  padding: 10px;
+  width: 100%;
+  height: 600px;
+  position: relative;
+  margin-top: 37px;
+}
+
+.section-title {
+  color: lightgreen;
+  font-family: inherit;
+  text-align: center;
+}
+
+#product-overview h1 {
+  color: white;
+  font-family: "Pacifico", cursive;
+  font-size: 40px;
+  position: absolute;
+  bottom: 2%;
+  left: 2%;
+  text-shadow: 10px 10px 20px rgb(99, 99, 99);
+}
+
+.plan-box-container {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.plan-box {
+  background-color: #c4f8cd;
+  text-align: center;
+  padding: 16px;
+  margin: 10px;
+  display: inline-block;
+  width: 30%;
+  vertical-align: middle;
+}
+
+.plan-box-recommened {
+  background-color: #51a55f;
+  color: white;
+  box-shadow: 6px 6px 8px 1px rgba(0, 0, 0, 0.5);
+}
+
+.plan-box-recommened .plan-box-title {
+  color: white;
+}
+
+.plan-box-recommened .plan-box-price {
+  color: #0c3a1b;
+}
+
+.plan-box-title {
+  color: #0c3a1b;
+}
+.plan-box-price {
+  color: #858585;
+}
+
+.plan-box-badge {
+  background-color: white;
+  color: #51a55f;
+  box-shadow: 4px 4px 8px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 10px 0;
+}
+
+.plan-box-features {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.plan-box-features-item {
+  margin: 8px 0;
+}
+
+#key-features {
+  background: #cc1652;
+  padding: 16px;
+}
+
+#key-features .section-title {
+  color: white;
+  margin: 32px;
+}
+
+.key-features-list {
+  vertical-align: middle;
+  list-style: none;
+  text-align: center;
+}
+
+.key-features-list-item {
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  width: 32%;
+  vertical-align: top;
+}
+
+.key-features-list-image {
+  margin: 0 auto;
+  border: 1.5px solid black;
+  border-radius: 50%;
+  width: 128px;
+  height: 128px;
+  padding: 24px;
+  background: #d29eaf;
+}
