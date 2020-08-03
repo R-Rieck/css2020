@@ -539,7 +539,26 @@ every background is seperated with a " , "
 | absolute lengths            | viewport lengths           | font relative lengths       | special case |
 | --------------------------- | -------------------------- | --------------------------- | ------------ |
 | Mostly ignore User settings | Adjust to current viewport | Adjust to default font size | %            |
-| px                          | vh / vw / vmin / vmax      | rem / em                    |
+| px                          | vh / vw / vmin / vmax      | rem / em                    |              |
+
+**3. Rules for the Percentage Case**
+1.) Fixed position and %
+The element targets the viewport as reference. If the width is set to 50% and the viewport is 600px, the width of the element would be 300px
+
+2.) absolute position and %
+The element targets the ancestor content ( + padding ) as reference. The Ancestor refers to the element which has the property position set. If the width is set to 50% and the Acenstor is 50% width a padding of 20px AND the viewport is 600px large, the width of the element would be 150px
+
+1.) static/relative position and %
+The element targets the closest ancestor content as reference if it has display: block. If the width is set to 50% and the ancestor is 600px, the width of the element would be 300px
+
+**min-/max-width and min-/max-height**
+defines the minimum/maximum height/width for an element, depending on the screensize
+
+**REM and EM**
+Both properties depend on the font-size
+
+- EM: em depends on the font-size of the Parent container: 20px on the parent means 40px on the child with 2em
+- REM: rem depends on the font-size of the root element (the HTML element): 20px on the html means 40px on the element with 2em. But if there is no font-size defined in the root, it takes the browser default (recommend might be 16px)
 
 ---
 
