@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="shortcut icon" href="../favicon.png" />
     <link rel="stylesheet" href="../shared.css" />
     <link rel="stylesheet" href="style.css" />
     <link
@@ -18,8 +18,14 @@
   </head>
   <body>
     <div class="background"></div>
+    <div id="backdrop" class="backdrop"></div>
     <header class="main-header">
       <div>
+        <button id="openSidebarButton" class="toggle-button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <a class="main-header-brand" href="../index.html">
           <img
             src="../../ressources/uhost-icon.png"
@@ -41,6 +47,19 @@
         </ul>
       </nav>
     </header>
+    <nav id="sidebarMenu" class="mobile-nav">
+      <ul class="mobile-nav__items">
+        <li class="mobile-nav__item">
+          <a href="index.html">Packages</a>
+        </li>
+        <li class="mobile-nav__item">
+          <a href="../customers/index.html">Customers</a>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item-cta">
+          <a href="../start-hosting/index.html">Start Hosting</a>
+        </li>
+      </ul>
+    </nav>
     <main>
       <section class="plan-box" id="free">
         <a href="#">
@@ -94,5 +113,6 @@
         </ul>
       </nav>
     </footer>
+    <script src="../shared.js"></script>
   </body>
 </html>

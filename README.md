@@ -687,3 +687,7 @@ a:not(.active) {
 
 - another site which is pretty good to checkout for browser support is
   https://caniuse.com/
+
+### Nice To Know
+
+- if you access via js the element.style, it will be empty because it doesnt compute your stylesheets. If you have an inline style it will shop up in the style property
