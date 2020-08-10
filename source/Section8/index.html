@@ -17,6 +17,25 @@
     <title>Section 2</title>
   </head>
   <body>
+    <div id="backdrop" class="backdrop" onclick="closeModal()"></div>
+    <div id="modal" class="modal">
+      <h1 class="modal__title">Do you want to continue?</h1>
+      <div class="modal__actions">
+        <a
+          href="start-hosting/index.html"
+          class="modal__action"
+          onclick="closeModal()"
+          >Yes!</a
+        >
+        <button
+          class="modal__action modal__action--negative"
+          type="button"
+          onclick="closeModal()"
+        >
+          No!
+        </button>
+      </div>
+    </div>
     <header class="main-header">
       <div>
         <a class="main-header-brand" href="index.html">
@@ -59,7 +78,9 @@
               <li class="plan-box-features-item">Basic Support</li>
             </ul>
             <div>
-              <button class="action-button">CHOOSE PLAN</button>
+              <button class="action-button" onclick="openModal()">
+                CHOOSE PLAN
+              </button>
             </div>
           </article>
           <article class="plan-box plan-box-recommened">
@@ -74,7 +95,9 @@
               <li class="plan-box-features-item">Plus Support</li>
             </ul>
             <div>
-              <button class="action-button">CHOOSE PLAN</button>
+              <button class="action-button" onclick="openModal()">
+                CHOOSE PLAN
+              </button>
             </div>
           </article>
           <article class="plan-box">
@@ -88,7 +111,9 @@
               <li class="plan-box-features-item">Priority Support</li>
             </ul>
             <div>
-              <button class="action-button">CHOOSE PLAN</button>
+              <button class="action-button" onclick="openModal()">
+                CHOOSE PLAN
+              </button>
             </div>
           </article>
         </div>
@@ -503,5 +528,6 @@
         </ul>
       </nav>
     </footer>
+    <script src="./shared.js"></script>
   </body>
 </html>
