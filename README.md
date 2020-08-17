@@ -562,6 +562,74 @@ Both properties depend on the font-size
 
 ---
 
+### Responsive
+
+A Good starting point is to say: Start mobile first, then go to the Desktop view
+
+Difference between hardwarepixels and softwarepixels
+
+| Hardware Pixels             | Software Pixels            |
+| --------------------------- | -------------------------- |
+| Mostly ignore User settings | Adjust to current viewport |
+
+Viewport vs Media Queries
+
+| Viewport HTML                  | Media Querys (CSS)               |
+| ------------------------------ | -------------------------------- |
+| adjust site to device viewport | Change design by the actual size |
+| Can't make design changes      | Design Changes defined by us     |
+
+**Viewport**
+
+Defines to target the viewport, to not present the desktop site on the mobile device ( or smaller screen)
+It's a meta tag, defined like this:
+
+<meta name="viewport" content="width=device-width, inital-scale=1.0, maximum-scale=1.5 minimum-scale=1.0, user-scalable=yes">
+the properties for the content are:
+- width - defines the width, which will be used
+- inital-scale - inital zoom 
+- maximum-scale - max zoom value
+- minimum-scale - min zoom value
+- user-scalable (boolean) - defines if the user is able to zoom in and out
+
+**Media-Queries**
+
+- order media queries ascending, otherwise you run in problems with execution
+
+They are added like this:
+
+```
+@media (propery: value) {
+    selector {
+        property: value
+    }
+}
+```
+
+There are 2 specifications which might be important
+
+- If you started to design a Desktop Page first, write your query like this:
+
+```
+@media (max-width: 50rem) {
+    ...do something
+}
+```
+
+The Query is read like this: If your Page is Less than 50rem, execute the following
+
+- If you started to design a mobile Page first, write your query like this:
+
+```
+@media (min-width: 50rem) {
+    ...do something
+}
+```
+
+The Query is read like this: If your Page is greater than 50rem, execute the following
+
+---
+
 List of usefull css props and pseudoelements:
 
 **Z-INDEX**
@@ -687,6 +755,9 @@ a:not(.active) {
 
 - another site which is pretty good to checkout for browser support is
   https://caniuse.com/
+
+- a Page to see all device sizes for responsive design
+  https://www.mydevice.io/
 
 ### Nice To Know
 
