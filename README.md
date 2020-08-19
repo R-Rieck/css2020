@@ -192,7 +192,9 @@ You can Target any child element within a specific class like this
 
 this simply adds the pseudo class to every child which is invalid or required
 
-Another type of selection are the advanced attribute selectors
+Another type of selection are the advanced attribute selectors. Look at the image below
+
+![advanced attribute selector](https://github.com/RRieck/css2020/blob/master/ressource-images-wiki/advanced-attributes-selector.png)
 
 ---
 
