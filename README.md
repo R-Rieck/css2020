@@ -672,7 +672,13 @@ you can combine media queries to provide a more detailed query:
 
 ---
 
-List of usefull css props and pseudoelements:
+### Fonts and Texts
+
+**Generic Fonts and Font Families**
+
+---
+
+### List of usefull css props and pseudoelements:
 
 **Z-INDEX**
 

@@ -1,0 +1,284 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+}
+
+.backdrop {
+  position: fixed;
+  display: none;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  position: fixed;
+  display: none;
+  z-index: 200;
+  top: 20%;
+  left: 30%;
+  width: 40%;
+  background: white;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.modal__title {
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+
+.modal__actions {
+  text-align: center;
+}
+
+.modal__action {
+  border: 1px solid #0e4f1f;
+  background: #0e4f1f;
+  text-decoration: none;
+  color: white;
+  font: inherit;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.modal__action:hover,
+.modal__action:active {
+  background: #2ddf5c;
+  border-color: #2ddf5c;
+}
+
+.modal__action--negative {
+  background: red;
+  border-color: red;
+}
+
+.modal__action--negative:hover,
+.modal__action--negative:active {
+  background: #ff5454;
+  border-color: #ff5454;
+}
+
+.main-header {
+  position: fixed;
+  width: 100%;
+  background-color: #2ddf5c;
+  padding: 8px 16px;
+  display: inline-block;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  height: 3.5rem;
+}
+
+.main-header > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.main-header-brand {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  height: 2.5rem;
+  position: absolute;
+  right: 1rem;
+  top: 0.75rem;
+}
+
+.main-header-brand img {
+  height: 100%;
+}
+
+.main-nav {
+  display: none;
+  width: calc(100% - 120px);
+  text-align: right;
+  vertical-align: middle;
+}
+
+.main-nav-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-nav-item {
+  display: inline-block;
+  margin: 0px 25px;
+}
+
+.main-nav-item > a,
+.mobile-nav__item > a {
+  text-decoration: none;
+  color: black;
+  padding: 3px 0;
+}
+
+.main-nav-item > a:hover,
+.main-nav-item > a:active {
+  color: white;
+  border-bottom: 2px solid white;
+}
+
+.main-nav-item-cta > a,
+.mobile-nav__item-cta > a {
+  color: white;
+  background: black;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+
+.main-nav-item-cta > a:hover,
+.main-nav-item-cta > a:active,
+.mobile-nav__item-cta > a:hover,
+.mobile-nav__item-cta > a:active {
+  color: black;
+  background: white;
+  border: none;
+}
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  left: 0;
+  background: white;
+  width: 80%;
+  height: 100vh;
+}
+
+.mobile-nav__items {
+  width: 90%;
+  height: 100%;
+  list-style: none;
+  margin: 10% auto;
+  padding: 0;
+  text-align: center;
+}
+
+.mobile-nav__item {
+  margin: 1rem 0;
+}
+
+.mobile-nav__item a {
+  font-size: 1.5rem;
+}
+
+main {
+  margin-top: 3.5rem;
+  min-height: calc(100vh - 3.5rem - 9.84rem);
+}
+
+.action-button {
+  background: #0e4f1f;
+  color: white;
+  font: inherit;
+  border: 1.5px solid #0e4f1f;
+  border-radius: 5px;
+  padding: 8px;
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+.toggle-button {
+  width: 3rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+}
+
+.toggle-button:focus {
+  outline: none;
+}
+
+.toggle-button > span {
+  width: 100%;
+  height: 0.2rem;
+  background: black;
+  display: block;
+  margin: 0.6rem 0;
+}
+
+.action-button:hover,
+.action-button:active {
+  background: white;
+  color: #0e4f1f;
+}
+
+.action-button[disabled] {
+  cursor: not-allowed;
+  border: #a1a1a1;
+  background: #ccc;
+  color: #a1a1a1;
+}
+
+.main-footer {
+  background: black;
+  color: white;
+  padding: 32px;
+  margin-top: 48px;
+}
+
+.main-footer-links {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.main-footer-link {
+  color: inherit;
+  list-style: none;
+  margin: 1rem 1.4rem;
+}
+
+.main-footer-link > a {
+  color: white;
+  text-decoration: none;
+}
+
+.main-footer-link > a:hover,
+.main-footer-link > a:active {
+  color: rgb(146, 143, 143);
+}
+
+.open {
+  display: block !important;
+}
+
+@media (min-width: 46rem) {
+  .main-nav {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .toggle-button {
+    display: none;
+  }
+
+  .main-header-brand {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 1rem;
+    position: relative;
+    top: 0;
+  }
+
+  .main-footer-link {
+    display: inline-block;
+    margin: 0 1.4rem;
+  }
+}
