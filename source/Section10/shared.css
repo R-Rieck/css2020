@@ -218,6 +218,13 @@ main {
   color: #0e4f1f;
 }
 
+.action-button[disabled] {
+  cursor: not-allowed;
+  border: #a1a1a1;
+  background: #ccc;
+  color: #a1a1a1;
+}
+
 .main-footer {
   background: black;
   color: white;

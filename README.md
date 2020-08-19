@@ -162,6 +162,38 @@ if you specify more than one class with the same property, the order in the css 
 class: **reusable** and allow you to mark things for styling purposes
 class: **once per page** and non css-meaning (e.g.: link purposes)
 
+**Advanced**
+
+style an element if it has a certain class like this:
+
+```
+HTML
+
+<input class="invalid" />
+<input />
+<input class="invalid" />
+
+CSS
+
+input.invalid {
+    /*do something*/
+}
+
+```
+
+You can Target any child element within a specific class like this
+
+```
+.signup-form :invalid {
+    /*do something*/
+}
+
+```
+
+this simply adds the pseudo class to every child which is invalid or required
+
+Another type of selection are the advanced attribute selectors
+
 ---
 
 ### Priority
@@ -627,6 +659,16 @@ The Query is read like this: If your Page is Less than 50rem, execute the follow
 ```
 
 The Query is read like this: If your Page is greater than 50rem, execute the following
+
+**operators**
+
+you can combine media queries to provide a more detailed query:
+
+```
+@media (min-width: 40rem) and (orientation: landscape) {
+    /*do something*/
+}
+```
 
 ---
 
