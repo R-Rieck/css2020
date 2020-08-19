@@ -678,6 +678,8 @@ you can combine media queries to provide a more detailed query:
 
 **Generic Fonts and Font Families**
 
+![Generic Fonts and Font Families](https://github.com/RRieck/css2020/blob/master/ressource-images-wiki/Generic-fonts-and-families.png)
+
 ---
 
 ### List of usefull css props and pseudoelements:
