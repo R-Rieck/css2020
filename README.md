@@ -680,6 +680,44 @@ you can combine media queries to provide a more detailed query:
 
 ![Generic Fonts and Font Families](https://github.com/RRieck/css2020/blob/master/ressource-images-wiki/Generic-fonts-and-families.png)
 
+Usefull Font Properties:
+
+- font-family: defines the font;
+- font-size: defines how large the font should be;
+- font-weight: defines the thickness > i.e. bold;
+- font-variant: i.e. small-caps > converts the text here in capital letters
+- letter-spacing: defines the space between each letter
+- white-sapce: defines how the whitespace is treated: i.e nowrap (no wrapping at the whitespace > onliner)
+- line-height: defines the height of a line box
+  - if you set the value to normal, it will take the font specific height
+  - if you set it to the number it will always refer to the font-size
+- text-decoration: defines the decoration like underline, overline or line-through with different styles like dotted or a color
+  -text-shadow: adds a shadow to the text: syntax (text-shadow: [x-axes][y-axes] [blur][color])
+
+**Font shorthand property**
+
+```
+/*size and family required*/
+font: [font-style] [font-variant] [font-weight] [font-size]/[line-height] [font-family]
+
+font: italic small-caps bold 1.2rem/2 Roboto
+
+/*you can also relate to system-font:*/
+
+font: menu;
+```
+
+**font-display**
+
+options: | swap | block | fallback | optional | default: auto
+
+| case     | block period                                                                                |                        | swap period                                                                                               |
+| -------- | ------------------------------------------------------------------------------------------- | ---------------------- | --------------------------------------------------------------------------------------------------------- |
+| swap     | no block period (if the font is not loaded yet, the space will be reserved with a fallback) | fallback               | infinite (changes the fallback to the custom font)                                                        |
+| block    | short block period (placeholder, but its loaded)                                            | fallback               | infinite (changes the fallback to the custom font)                                                        |
+| fallback | very short block period (placeholder, but its loaded)                                       | fallback               | short (changes the fallback to the custom font) > if its not loaded within time the fallback will be used |
+| optional | very short block period (placeholder, but its loaded)                                       | (custom-font) fallback | short (changes the fallback to the custom font) > if its not loaded within time the fallback will be used |
+
 ---
 
 ### List of usefull css props and pseudoelements:
