@@ -1,8 +1,3 @@
-main {
-  padding-top: 2rem;
-  margin: unset auto;
-}
-
 .background {
   position: fixed;
   background: url("../../ressources/plans-background.jpg") center/cover;

@@ -1,0 +1,288 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat&family=Noto+Sans&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  margin: 0;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 3.5rem auto fit-content(5rem);
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+.backdrop {
+  position: fixed;
+  display: none;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  position: fixed;
+  display: none;
+  z-index: 200;
+  top: 20%;
+  left: 30%;
+  width: 40%;
+  background: white;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.modal__title {
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+
+.modal__actions {
+  text-align: center;
+}
+
+.modal__action {
+  border: 1px solid #0e4f1f;
+  background: #0e4f1f;
+  text-decoration: none;
+  color: white;
+  font: inherit;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.modal__action:hover,
+.modal__action:active {
+  background: #2ddf5c;
+  border-color: #2ddf5c;
+}
+
+.modal__action--negative {
+  background: red;
+  border-color: red;
+}
+
+.modal__action--negative:hover,
+.modal__action--negative:active {
+  background: #ff5454;
+  border-color: #ff5454;
+}
+
+.main-header {
+  position: fixed;
+  width: 100%;
+  background-color: #2ddf5c;
+  padding: 8px 16px;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-header > div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.main-header-brand img {
+  height: 2.5rem;
+}
+
+.main-nav {
+  display: none;
+}
+
+.main-nav-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-nav-item {
+  display: inline-block;
+  margin: 0px 25px;
+}
+
+.main-nav-item > a,
+.mobile-nav__item > a {
+  text-decoration: none;
+  color: black;
+  padding: 3px 0;
+}
+
+.main-nav-item > a:hover,
+.main-nav-item > a:active {
+  color: white;
+  border-bottom: 2px solid white;
+}
+
+.main-nav-item-cta > a,
+.mobile-nav__item-cta > a {
+  color: white;
+  background: black;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+
+.main-nav-item-cta > a:hover,
+.main-nav-item-cta > a:active,
+.mobile-nav__item-cta > a:hover,
+.mobile-nav__item-cta > a:active {
+  color: black;
+  background: white;
+  border: none;
+}
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  left: 0;
+  background: white;
+  width: 80%;
+  height: 100vh;
+}
+
+.mobile-nav__items {
+  width: 90%;
+  height: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-nav__item {
+  margin: 1rem 0;
+}
+
+.mobile-nav__item a {
+  font-size: 1.5rem;
+}
+
+main {
+  grid-area: main;
+}
+
+.action-button {
+  background: #0e4f1f;
+  color: white;
+  font: inherit;
+  border: 1.5px solid #0e4f1f;
+  border-radius: 5px;
+  padding: 8px;
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+.toggle-button {
+  width: 3rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.toggle-button:focus {
+  outline: none;
+}
+
+.toggle-button > span {
+  width: 100%;
+  height: 0.2rem;
+  background: black;
+  display: block;
+}
+
+.action-button:hover,
+.action-button:active {
+  background: white;
+  color: #0e4f1f;
+}
+
+.action-button[disabled] {
+  cursor: not-allowed;
+  border: #a1a1a1;
+  background: #ccc;
+  color: #a1a1a1;
+}
+
+.main-footer {
+  background: black;
+  color: white;
+  grid-area: footer;
+  padding: 2rem;
+}
+
+.main-footer-links {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-footer-link {
+  color: inherit;
+  list-style: none;
+  margin: 0.5rem;
+  display: inherit;
+  justify-content: center;
+}
+
+.main-footer-link > a {
+  color: white;
+  text-decoration: none;
+}
+
+.main-footer-link > a:hover,
+.main-footer-link > a:active {
+  color: rgb(146, 143, 143);
+}
+
+.open {
+  display: block !important;
+}
+
+@media (min-width: 46rem) {
+  .main-nav {
+    display: flex;
+  }
+
+  .toggle-button {
+    display: none;
+  }
+
+  .main-header > div {
+    width: 2.5rem;
+  }
+
+  .main-footer-links {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .main-footer-link {
+    margin: 0 1.4rem;
+  }
+}

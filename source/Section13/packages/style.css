@@ -92,11 +92,12 @@
 
 @media (min-width: 40rem) {
   main {
-    max-width: 1500px;
+    min-width: 500px;
+    margin: 0 auto;
   }
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 870px) {
   .plan-box {
     border-left: 4px solid #194728;
   }

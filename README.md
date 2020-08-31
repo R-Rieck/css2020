@@ -79,7 +79,6 @@ CSS - The Complete Guide 2020
     </div>
     ```
 
-
     ```
     CSS - EXAMPLE
 
@@ -720,6 +719,169 @@ options: | swap | block | fallback | optional | default: auto
 
 ---
 
+### Flex
+
+**Display**
+
+display: flex | inline-flex
+
+difference: flex still behaves like a block level element and inline-flex like an inline element
+
+**Properties for Flex-Container**
+
+| property        | usecase                                                                                              | example                                         |
+| --------------- | ---------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| flex-wrap       | defines the wrap of the element inside the flex-container                                            | flex-wrap: wrap / nowrap                        |
+| flex-direction  | defines if the elements inside the container a positioned next to each other or on top of each other | flex-direction: row / column                    |
+| flex-flow       | combines flex-wrap and flex-direction                                                                | flex-flow: row wrap                             |
+| align-items     | changes the position of the elements at the cross axe                                                | align-items: center / flex-start / flex-end     |
+| justify-content | changes the position of the elements at the main axe                                                 | justify-content: center / flex-start / flex-end |
+| align-content   | changes the position of the elements at the cross axe if they have a specific width/length           | justify-content: center / flex-start / flex-end |
+
+**axes**
+
+![axes](https://github.com/RRieck/css2020/blob/master/ressource-images-wiki/flex-axes.png)
+
+**Properties for Flex-Items**
+
+| property    | usecase                                                                                                                                                                                       | example            |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| Order       | it defines where the specific item should be placed in the flex-container (depending on the axe, it gets placed at the end if its number is larger than 0 [default value for all items is 0]) | order: 4           |
+| align-self  | defines where the item is placed in the flex container depending on the axe                                                                                                                   | align-self: center |
+| flex-grow   | defines the grow factor of the flex items main size                                                                                                                                           | flex-grow: 1       |
+| flex-shrink | defines the shrink factor of the flex items main size (default: 1 / if its 0, it will not shrink anymore)                                                                                     | flex-shrink: 4     |
+| flex-basis  | defines the size of an element on the main axes (important to know: the item will override the width/height depending on what the main axe is)                                                | flex-shrink: 4     |
+
+shorthand:
+
+```
+flex: [flex-grow] [flex-shrink] [flex-basis]
+flex: 0 1 auto
+```
+
+---
+
+### Grid
+
+CSS Grid is a layout technic to quickly define a layout
+with CSS Grid comes a new Unit "fr" for fraction. It defines the width, depending on the space left by other elements. I.e. 1fr 2fr: the 2fr takes the 2x amount of available space.
+
+| property              | usecase                                                                                                                    | example                            |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| grid-template-columns | defines the number and the size of the columns (the value defines the size and the amount of values the amount of columns) | grid-template-columns: 1fr 1fr     |
+| grid-template-rows    | defines the number and the size of the rows (the value defines the size and the amount of values the amount of rows)       | grid-template-rows: 1fr 1fr        |
+| grid-column-start     | defines the start column for the element                                                                                   | grid-columm-start: 1               |
+| grid-column-end       | defines the end column for the elementl                                                                                    | grid-column-end: 3                 |
+| grid-row-start        | defines the start row for the element                                                                                      | grid-row-start: 1                  |
+| grid-row-end          | defines the end row for the element                                                                                        | grid-row-end: 2                    |
+| grid-column-gap       | defines the space between each column                                                                                      | grid-column-gap: 10px              |
+| grid-row-gap          | defines the space between each row                                                                                         | grid-row-gap: 10px                 |
+| grid-gap              | defines the space between each row and column                                                                              | grid-gap: 10px 10px                |
+| justify-items         | specified on the container to align items horizontally                                                                     | justify-items: center              |
+| justify-content       | aligns the item in the container on the x axe                                                                              | justify-content: center            |
+| align-content         | aligns the item in the container on the y axe                                                                              | align-content: center              |
+| justify-self          | aligns the item itself on the x axe                                                                                        | align-self: center                 |
+| align-self            | aligns the item in the container on the y axe                                                                              | align-self: center                 |
+| grid-auto-rows        | specify the height of the rows if they are auto generated                                                                  | grid-auto-rows: minmax(8rem, auto) |
+| grid-auto-flow        | specify the flow of the items like flex-direction                                                                          | grid-auto-rows: column             |
+
+!important:
+
+    - if you set grid-column start and wanna span this element 3 columns you can do it like this: grid-column-end: span 3
+    - if you want to set the element to the whole column do it like this: grid-column-start: 1 ; grid-column-end: -1
+    - if both element are defined to be in one row and column, they overlap: the dom order defines the order
+
+**naming lines**
+you can name the lines:
+
+```
+.container{
+    grid-template-row: [name] value [name name] value [name]
+    grid-template-row: [header-start] 80px [header-end footer-start] 80px [footer-end]
+
+    you could also say:
+    this takes as much items in the row as possible
+
+    => grid-template-column repeat(auto-fill, 5rem)
+
+    auto-fit also centers the items
+
+    => grid-template-column repeat(auto-fit, 5rem)
+
+    normally if you have 2 elements with a span of 2 but just 3 columns, it would look like this:
+
+    | element1 | element1 | empty    |
+    | element2 | element2 | element3 |
+
+    it's because of the document flow...
+    Do remove this behaviour use "dense"
+
+    grid-auto-flow: row dense
+
+    | element1 | element1 | element3 |
+    | element2 | element2 | empty    |
+
+}
+
+.header{
+    grid-row-start: header-start;
+    grid-row-end: header-end;
+}
+```
+
+**shorthands**
+
+```
+{
+    grid-column-start: 1;
+    grid-column-end: -1;
+
+    => grid-column: 1 / -1;
+
+    grid-row-start: 1;
+    grid-row-end: -1;
+
+    => grid-row: 1 / -1;
+
+    to get all the values in one shorthand
+
+    grid-area: grid-row-start / grid-colum-start / grid-row-end / grid-column-end
+
+    grid-area: 1 / 1 / -1 / -1
+
+    grid-gap: row column
+    grid-gap: 10px 20px
+    grid-gap: 10px
+}
+```
+
+**Named Template Areas**
+in named template areas you can define areas in a human read way and tell your elements where to place
+
+```
+{
+    grid-template-area: "header header header header"
+                        ".   side   main   main"
+                        "footer footer footer footer"
+
+    /*the dot means that it's not named*/
+}
+
+{
+    grid-area: header
+}
+```
+
+---
+
+### Grid vs Flex
+
+The image shows the difference between grid and flex
+
+![axes](https://github.com/RRieck/css2020/blob/master/ressource-images-wiki/grid-vs-flex.png)
+
+---
+
 ### List of usefull css props and pseudoelements:
 
 **Z-INDEX**
@@ -835,6 +997,33 @@ defines a style for every element of that type, that are not excluded by the not
 
 a:not(.active) {
     color: limegreen
+}
+```
+
+**repeat**
+it's function to repeat values like for grid
+
+```
+body {
+    grid-template-column: repeat(4, 1fr)
+}
+```
+
+**minmax**
+it's function to specify a min and a max value
+
+```
+body {
+    grid-template-column: minmax(50px, 100px)
+}
+```
+
+**fit-content**
+the function tell the component to be as big as the content needs. the function value is the size which defines the default for the element
+
+```
+body {
+    grid-template-column: minmax(50px, 100px)
 }
 ```
 
