@@ -1,0 +1,20 @@
+{
+  "name": "css2020",
+  "version": "1.0.0",
+  "description": "CSS - The Complete Guide 2020",
+  "main": "index.js",
+  "scripts": {
+    "build-sass": "sass ./source/SASS/main.scss ./source/SASS/main.css",
+    "watch-sass": "sass --watch ./source/SASS/main.scss ./source/SASS/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RRieck/css2020.git"
+  },
+  "author": "RRieck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RRieck/css2020/issues"
+  },
+  "homepage": "https://github.com/RRieck/css2020#readme"
+}

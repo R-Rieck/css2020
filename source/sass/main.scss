@@ -1,0 +1,120 @@
+@import "_variables.scss";
+@import "typography.scss";
+
+
+html {
+  font-size:  94.75%;
+
+  @media (min-width: 40rem) {
+      font-size: 125%;
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex: {
+    direction: column;
+    wrap: nowrap;
+  }
+  align-items: center;
+  padding: 3rem 0;
+  box-sizing: border-box;
+
+  @media (min-width: 40rem) {  
+      padding: map-get($map: $sizes, $key: large) 0;
+  }
+}
+
+.sass-section {
+  border: $border-default;
+  background: #fae5ff;
+  padding: map-get($map: $sizes, $key: medium);
+  text-align: center;
+  box-shadow: map-get($map: $sizes, $key: tiny)
+    map-get($map: $sizes, $key: tiny) map-get($map: $sizes, $key: tiny) / 2 #ccc;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+.sass-introduction {
+  @extend .sass-section;
+  box-shadow: map-get($map: $sizes, $key: tiny)
+    map-get($map: $sizes, $key: tiny) map-get($map: $sizes, $key: tiny) / 2 #ccc;
+
+  & p {
+    margin: 0;
+  }
+
+  @media (min-width: 40rem) {
+      width: 30rem;
+  }
+  
+}
+
+.sass-details {
+  @extend .sass-section;
+  margin: map-get($map: $sizes, $key: medium) 0;
+}
+
+.section-header {
+  border-bottom: $border-default;
+
+  & h1 {
+    margin: 0 0 map-get($map: $sizes, $key: small) 0;
+  }
+}
+
+.documentation-links {
+  list-style: none;
+  margin: map-get($map: $sizes, $key: small) 0 0 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+
+  & li {
+    margin: map-get($map: $sizes, $key: tiny) 0;
+    background: white;
+  }
+
+  & .documentation-link {
+    text-decoration: none;
+    color: map-get($map: $colors, $key: main);
+    display: block;
+    padding: map-get($map: $sizes, $key: tiny);
+    border: $border-default;
+
+    &:hover,
+    &:active {
+      color: white;
+      background: map-get($map: $colors, $key: hover);
+      border-color: map-get($map: $colors, $key: hover);
+    }
+  }
+
+}
+
+@media (min-width: 40rem) {
+  html {
+    font-size: 125%;
+  }
+
+  .container {
+    padding: map-get($map: $sizes, $key: large) 0;
+  }
+
+  .sass-introduction,
+  .sass-details {
+    width: 30rem;
+  }
+}

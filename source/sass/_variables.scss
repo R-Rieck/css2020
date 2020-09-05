@@ -1,0 +1,20 @@
+$colors: (
+  main: #521751,
+  hover: #fa923f,
+);
+
+$sizes: (
+  tiny: 0.2rem,
+  small: 1rem,
+  medium: 2rem,
+  large: 3rem,
+);
+
+$border-default: map-get(
+    $map: $sizes,
+    $key: tiny,
+  ) / 4 solid
+  map-get(
+    $map: $colors,
+    $key: main,
+  );

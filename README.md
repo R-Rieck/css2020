@@ -882,6 +882,198 @@ The image shows the difference between grid and flex
 
 ---
 
+### Transforming elements
+
+| property         | usecase                                                                       | example                     |
+| ---------------- | ----------------------------------------------------------------------------- | --------------------------- |
+| transform        | provides a bunch of functions to transform elements like rotate and translate | transform: rotateZ(45deg)   |
+| transform-origin | controls where to transform this element like upper right corner              | transform-origin: top right |
+
+**transform functions**
+
+| property  | usecase                                   | example                     |
+| --------- | ----------------------------------------- | --------------------------- |
+| rotate    | rotates the element at the specified axe  | transform: rotateZ(45deg)   |
+| translate | moves the element at the specified axe    | transform: translateX(1rem) |
+| skew      | it skews the element on the specified axe | transform: skewX(20deg)     |
+| scale     | scales the image on the specified axe     | transform: scaleX(2)        |
+
+**3d**
+
+| property           | usecase                                                                           | example                       |
+| ------------------ | --------------------------------------------------------------------------------- | ----------------------------- |
+| rotateX/Y          | rotates the element along the 3d axes                                             | transform: rotateX(45deg)     |
+| translateZ         | moves the element at the specified axe in a 3d way                                | transform: translateZ(1rem)   |
+| perspective        | use in parent as property or as function for transform => changes the perspective | transform: perspective(20rem) |
+| perspective-origin | changes the perspectives origin where it should start                             | perspective-origins: 20rem    |
+
+**special cases**
+
+    - rotate with translate
+        - if the element is rotated by 45deg and you translate it, it's important to know that the x and y axes are parallely to the element (so the x axe is also rotated by 45deg)
+
+**shorthand property**
+
+```
+{
+    rotateZ(20deg) => rotate(20deg)
+    translateX(1rem) and TranslateY(2rem) => translate(1rem, 2rem)
+    skewX(2deg) and skewY(2deg) => skew(2deg, 2deg)
+    scaleX(1.4) and scaleY(1.4) => scale(1.4)
+}
+```
+
+---
+
+### Transitions
+
+Transition is the way to show nice lookings animations. It is defined like this
+
+```
+{
+    /* transition: [property to watch] [how long] [timing function] [delay] */
+
+    opacity: 0;
+    transform: translateY(-3rem)
+    transition: opacity 300ms ease-out, transform 500ms ease-in;
+}
+
+```
+
+**timing functions**
+
+| property     | usecase                              | example                                          |
+| ------------ | ------------------------------------ | ------------------------------------------------ |
+| ease-in      | transition with slow start           | transition: opacity 1s ease-in                   |
+| ease-out     | transition with slow end             | transition: opacity 1s ease-out                  |
+| ease-in-out  | transition with slow start and end   | transition: opacity 1s ease-in-out               |
+| linear       | transition with same speed           | transition: opacity 1s linear                    |
+| cubic-bezier | transition self defined speed values | transition: opacity 1s cubic-bezier(0,0,.46,.32) |
+
+**animations**
+you start with defining so called keyframes that let you decide which animation you want to play
+
+```
+@keyframes wiggle{
+    from {
+        transform: rotateZ(0deg)
+    }
+
+    to {
+        transform: rotateZ(90deg)
+    }
+}
+
+.class-to-wiggle {
+    /*  animation: [name] [how long] [delay] [how often] [should it move back] */
+        animation: wiggle 200ms 3s 9 alternate
+
+}
+```
+
+---
+
+### Future proof css code
+
+**Variables**
+varaibles are great to define variable for reusability
+
+```
+Defined like this (the -- is recommended):
+
+: root {
+    --my-color: #5bcaff
+}
+
+then you can use it like this (the second value in var is the fallback)
+
+.selector {
+    background-color: var(--my-color, black)
+}
+
+```
+
+**vendor prefixes**
+its a mechanism to render new features on an old way to support it for nearly all browsers
+
+```
+.selector {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+```
+
+which prefix to use?
+
+use autoprefixer. It helps to automatically prefixes for defined browsers.
+Or use an online tool: https://autoprefixer.github.io/
+
+**support queries**
+
+```
+@supports (display: grid) {
+    .selector {
+        display: grid;
+        grid-template-rows: 2.5rem auto fit-content(8rem)
+    }
+}
+
+or  with logical operators
+
+@supports (display: grid) and (display: flex){
+    .selector {
+        display: grid;
+        grid-template-rows: 2.5rem auto fit-content(8rem)
+    }
+}
+
+```
+
+**polyfills**
+
+A polyfill is a javascript package whoch enables certain css features in browsers which would not support it otherwise
+
+**Eliminate Cross-Browser Inconsistencies**
+
+![inconsistency](https://github.com/RRieck/css2020/blob/master/ressource-images-wiki/inconsistency.png)
+
+---
+
+### Naming
+
+| DO                                                         | DO NOT      |
+| ---------------------------------------------------------- | ----------- |
+| Use kebab-case (only lowecase and dashes) [case sensitive] | snakeCase   |
+| Name By Feature (i.e. .page-title)                         | .title-blue |
+
+**BEM BLock Element Modifier**
+A uniform and cinsitent way of naming you css classes
+
+```
+.BLOCK__ELEMENT--MODIFIER
+
+=>
+
+.menu-main__item--size-big
+
+```
+
+---
+
+## SASS
+
+SASS vs SCSS
+
+| SASS                              | SCSS |
+| --------------------------------- | ---- |
+| Doesn't run in the browser        |      |
+| Extends CSS(during development)   |      |
+| compiled to css before production |      |
+
+---
+
 ### List of usefull css props and pseudoelements:
 
 **Z-INDEX**
